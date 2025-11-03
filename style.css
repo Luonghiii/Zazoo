@@ -138,6 +138,41 @@ nav a:hover {
   box-shadow: 0 0 10px var(--color-primary);
 }
 
+/* Category label for project cards */
+.card .category {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Progress bar for skills */
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-secondary);
+}
+
+.progress-bar {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  width: var(--progress, 0%);
+}
+
 .btn {
   background-color: var(--color-primary);
   color: var(--color-bg);
