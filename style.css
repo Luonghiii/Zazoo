@@ -1,11 +1,8 @@
 :root {
-  /* Light theme colours inspired by the sample site */
-  --color-bg: #f0f6fc; /* very light blue background */
-  --color-primary: #007BFF; /* vivid blue for headings and accents */
-  --color-secondary: #00BFFF; /* lighter blue for highlights */
-  --color-card: #ffffff; /* white cards on light background */
-  --color-text: #333333; /* dark text for readability */
-  --color-muted: #666666; /* muted text */
+  --color-bg: #0a192f;
+  --color-primary: #00ffff;
+  --color-secondary: #0ef6ff;
+  --color-text: #ccd6f6;
 }
 
 * {
@@ -17,11 +14,6 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--color-bg);
-  /* subtle grid pattern to echo the inspirational design */
-  background-image:
-    linear-gradient(0deg, rgba(0,0,0,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
   color: var(--color-text);
   line-height: 1.6;
 }
@@ -31,13 +23,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: transparent;
-}
-
-nav .logo {
-  font-weight: bold;
-  color: var(--color-primary);
-  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 nav a {
@@ -55,10 +41,9 @@ nav a:hover {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 
-/* Hero section */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
@@ -66,29 +51,26 @@ nav a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 12px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* lighten overlay over hero image */
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--color-primary);
   position: relative;
   z-index: 1;
 }
 
 .available {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -98,11 +80,10 @@ nav a:hover {
 }
 
 .hero p {
-  font-size: 1rem;
-  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
   position: relative;
   z-index: 1;
-  color: var(--color-text);
 }
 
 .section {
@@ -110,25 +91,11 @@ nav a:hover {
 }
 
 .section h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--color-primary);
-  position: relative;
-  display: inline-block;
 }
 
-/* underline effect for section headings */
-.section h2::after {
-  content: "";
-  display: block;
-  width: 50%;
-  height: 3px;
-  background-color: var(--color-secondary);
-  margin-top: 4px;
-  border-radius: 2px;
-}
-
-/* Statistics row */
 .stats {
   display: flex;
   justify-content: space-around;
@@ -142,181 +109,55 @@ nav a:hover {
 }
 
 .stat h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 0.2rem;
 }
 
 .stat p {
-  font-size: 0.8rem;
-  color: var(--color-muted);
+  font-size: 0.9rem;
+  color: var(--color-text);
 }
 
-/* Generic card grid for projects and other sections */
 .card-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
-/* Generic card style */
 .card {
-  background-color: var(--color-card);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Hover effect for cards */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px var(--color-primary);
 }
 
-/* Category label for project cards */
-.card .category {
-  font-size: 0.75rem;
-  color: var(--color-secondary);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-}
-
-/* Progress bar for skills */
-.skill {
-  margin-bottom: 1rem;
-}
-
-.skill h3 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-  color: var(--color-secondary);
-}
-
-.progress-bar {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  width: 100%;
-  height: 8px;
-  overflow: hidden;
-}
-
-.progress-bar-fill {
-  height: 100%;
-  background-color: var(--color-primary);
-  border-radius: 4px;
-  width: var(--progress, 0%);
-}
-
-/* Form elements styling for contact page */
-input[type="text"], input[type="email"], textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--color-card);
-  color: var(--color-text);
-  font-size: 1rem;
-  margin-top: 0.3rem;
-}
-label {
-  color: var(--color-text);
-  font-weight: bold;
-}
-
-/* Primary button */
 .btn {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-bg);
   padding: 0.7rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
   transition: filter 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
 }
 
-/* Hover state for buttons */
 .btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
 
-/* Footer styling */
 .footer {
   text-align: center;
   padding: 2rem;
   margin-top: 4rem;
-  color: var(--color-muted);
+  color: var(--color-secondary);
   font-size: 0.9rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Additional styles for timeline on resume */
-.timeline {
-  position: relative;
-  margin: 2rem 0;
-  padding-left: 2rem;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--color-secondary);
-}
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: flex-start;
-}
-.timeline-icon {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 0.9rem;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
-.timeline-content {
-  max-width: 90%;
-}
-.timeline-date {
-  display: inline-block;
-  background-color: var(--color-secondary);
-  color: #fff;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  margin-bottom: 0.3rem;
-}
-.timeline-content h3 {
-  margin: 0.2rem 0;
-  font-size: 1rem;
-  color: var(--color-primary);
-}
-.timeline-content p {
-  margin: 0.2rem 0;
-  font-size: 0.85rem;
-  color: var(--color-muted);
-}
-
-/* Icon styling for about cards */
-.icon {
-  font-size: 1.3rem;
-  margin-right: 0.5rem;
-  color: var(--color-primary);
-  vertical-align: middle;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
